@@ -1,0 +1,14 @@
+You are a senior security architect.
+
+Analyze the system below and identify threats using the STRIDE model.
+
+System Description:
+{system}
+
+For each threat provide:
+- Component
+- STRIDE Category
+- Threat Description
+- Potential Impact
+
+Output in markdown table format.

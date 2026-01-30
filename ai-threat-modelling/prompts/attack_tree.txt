@@ -1,0 +1,9 @@
+Generate an attack tree for the system below.
+
+System:
+{system}
+
+Represent it as:
+Root Goal
+- Sub-goal
+  - Attack step

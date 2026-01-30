@@ -1,0 +1,19 @@
+The application is an online e-commerce platform.
+
+Architecture:
+- Frontend: React-based single page application accessed via web browsers.
+- Backend: Node.js REST API hosted on a cloud VM.
+- Authentication: JSON Web Tokens (JWT) used for user authentication and authorization.
+- Database: MongoDB used to store user profiles, orders, and payment references.
+- Payment Processing: Third-party payment gateway integrated via REST APIs.
+- Admin Panel: Separate admin dashboard used by administrators to manage products and orders.
+
+Security Controls:
+- HTTPS used for all client-server communication.
+- Passwords are hashed using bcrypt before storage.
+- Role-based access control implemented for admin and normal users.
+
+Assumptions:
+- The backend API is exposed to the public internet.
+- Admin panel is accessible only after authentication.
+- No Web Application Firewall (WAF) is currently deployed.
