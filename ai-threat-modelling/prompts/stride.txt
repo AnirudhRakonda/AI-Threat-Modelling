@@ -1,14 +1,26 @@
 You are a senior security architect.
 
-Analyze the system below and identify threats using the STRIDE model.
+Analyze the system below using the STRIDE threat modeling framework.
+
+Output STRICT JSON in the following format ONLY:
+
+{
+  "threats": [
+    {
+      "id": "T1",
+      "component": "",
+      "stride": "Spoofing | Tampering | Repudiation | Information Disclosure | Denial of Service | Elevation of Privilege",
+      "description": "",
+      "impact": "",
+      "attack_tree_node": ""
+    }
+  ]
+}
+
+Rules:
+- Each threat must have a unique id (T1, T2, ...)
+- attack_tree_node must be a short phrase like "Exploit Authentication"
+- Do NOT include explanations or markdown
 
 System Description:
 {system}
-
-For each threat provide:
-- Component
-- STRIDE Category
-- Threat Description
-- Potential Impact
-
-Output in markdown table format.
