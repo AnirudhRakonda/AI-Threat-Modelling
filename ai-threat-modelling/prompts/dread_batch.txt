@@ -1,0 +1,26 @@
+You are a cybersecurity risk analyst.
+
+Below is a list of threats identified using STRIDE.
+
+For each threat, assign DREAD scores from 1 (low) to 5 (high).
+
+Threats:
+{threat_list}
+
+For each threat id, output STRICT JSON in this format ONLY:
+
+{
+  "T1": {
+    "Damage": 0,
+    "Reproducibility": 0,
+    "Exploitability": 0,
+    "AffectedUsers": 0,
+    "Discoverability": 0
+  },
+  "T2": {
+    ...
+  }
+}
+
+Do not include explanations.
+Only output valid JSON.

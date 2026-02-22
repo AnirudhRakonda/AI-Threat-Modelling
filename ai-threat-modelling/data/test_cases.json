@@ -1,0 +1,14 @@
+[
+  {
+    "name": "E-Commerce Platform",
+    "description": "React frontend, Node.js REST API backend, MongoDB database, JWT authentication, Admin dashboard, public internet exposure."
+  },
+  {
+    "name": "Banking API System",
+    "description": "Mobile banking app, Spring Boot backend, PostgreSQL database, OAuth2 authentication, transaction processing APIs, deployed in cloud."
+  },
+  {
+    "name": "Cloud SaaS Application",
+    "description": "Microservices architecture on AWS, API Gateway, Lambda functions, S3 storage, DynamoDB, IAM roles, public-facing web portal."
+  }
+]

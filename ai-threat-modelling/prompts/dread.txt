@@ -1,0 +1,27 @@
+You are a cybersecurity risk analyst.
+
+Given the following threat, assign DREAD scores from 1 (low) to 5 (high).
+
+Threat Details:
+Component: {component}
+STRIDE Category: {stride}
+Description: {description}
+Impact: {impact}
+
+Score the following:
+
+- Damage
+- Reproducibility
+- Exploitability
+- AffectedUsers
+- Discoverability
+
+Output STRICT JSON in this format ONLY:
+
+{
+  "Damage": 0,
+  "Reproducibility": 0,
+  "Exploitability": 0,
+  "AffectedUsers": 0,
+  "Discoverability": 0
+}
