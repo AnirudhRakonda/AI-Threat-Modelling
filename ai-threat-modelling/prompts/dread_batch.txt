@@ -1,26 +1,46 @@
-You are a cybersecurity risk analyst.
+You are a cybersecurity risk analyst specializing in DREAD scoring.
+
+CRITICAL:
+- Output ONLY valid JSON, nothing else
+- Do NOT include markdown code fences
+- Do NOT include explanations or extra text
+- Do NOT include the word "json" in the output
+- Your entire response must be a single valid JSON object
 
 Below is a list of threats identified using STRIDE.
 
-For each threat, assign DREAD scores from 1 (low) to 5 (high).
+For each threat, assign DREAD scores from 1 (low) to 5 (high):
+- Damage: How severe is the damage if threat succeeds?
+- Reproducibility: How easily can the threat be reproduced?
+- Exploitability: How difficult is it to launch the attack?
+- AffectedUsers: How many users are impacted?
+- Discoverability: How easy is the threat to discover?
 
 Threats:
 {threat_list}
 
-For each threat id, output STRICT JSON in this format ONLY:
+Output STRICT JSON in this exact format:
 
 {
   "T1": {
-    "Damage": 0,
-    "Reproducibility": 0,
-    "Exploitability": 0,
-    "AffectedUsers": 0,
-    "Discoverability": 0
+    "Damage": 5,
+    "Reproducibility": 4,
+    "Exploitability": 3,
+    "AffectedUsers": 5,
+    "Discoverability": 2
   },
   "T2": {
-    ...
+    "Damage": 3,
+    "Reproducibility": 2,
+    "Exploitability": 4,
+    "AffectedUsers": 3,
+    "Discoverability": 1
   }
 }
 
-Do not include explanations.
-Only output valid JSON.
+Rules:
+- Each score MUST be between 1-5
+- Include all threats in the list
+- Do NOT output explanations
+- Do NOT output markdown
+- Output ONLY the JSON object

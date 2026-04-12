@@ -1,26 +1,42 @@
-You are a senior security architect.
+You are a senior security architect specializing in STRIDE threat modeling.
+
+CRITICAL:
+- Output ONLY valid JSON, nothing else
+- Do NOT include markdown code fences
+- Do NOT include explanations or extra text
+- Do NOT include the word "json" in the output
+- Your entire response must be a single valid JSON object
 
 Analyze the system below using the STRIDE threat modeling framework.
 
-Output STRICT JSON in the following format ONLY:
+Output STRICT JSON in this exact format:
 
 {
   "threats": [
     {
       "id": "T1",
-      "component": "",
-      "stride": "Spoofing | Tampering | Repudiation | Information Disclosure | Denial of Service | Elevation of Privilege",
-      "description": "",
-      "impact": "",
-      "attack_tree_node": ""
+      "component": "Component name",
+      "stride": "Spoofing",
+      "description": "Clear threat description",
+      "impact": "Potential impact",
+      "attack_tree_node": "Short attack phrase like 'Exploit Authentication'"
     }
   ]
 }
 
+STRIDE Categories:
+- Spoofing: Identity spoofing, fake data
+- Tampering: Unauthorized modification
+- Repudiation: Deny responsibility/action
+- Information Disclosure: Unauthorized data access
+- Denial of Service: Service unavailability
+- Elevation of Privilege: Unauthorized access level
+
 Rules:
-- Each threat must have a unique id (T1, T2, ...)
-- attack_tree_node must be a short phrase like "Exploit Authentication"
-- Do NOT include explanations or markdown
+- Each threat must have unique id (T1, T2, T3, ...)
+- Do NOT output explanations
+- Do NOT output markdown
+- Output ONLY the JSON object
 
 System Description:
 {system}
