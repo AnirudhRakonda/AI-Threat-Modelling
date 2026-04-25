@@ -16,6 +16,9 @@ from core.metrics import MetricsCollector, export_metrics_json, export_metrics_c
 from utils.mermaid import render_mermaid
 from llm.llm_client import query_llm
 
+# Get the directory where this script is located
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -36,17 +39,17 @@ st.caption("Unified Multimodal LLaVA | STRIDE | DREAD | Attack Trees | ⚡ Phase
 
 # Sidebar for settings
 with st.sidebar:
-    st.header("⚙️ Settings")
+    st.header("Settings")
     
     enable_metrics = st.checkbox("Enable Metrics Collection", value=True, help="Track latency, tokens, and errors")
     enable_context_warnings = st.checkbox("Context Warnings", value=True, help="Warn when approaching context limits")
     
-    if st.button("📊 View Metrics Summary"):
+    if st.button("View Metrics Summary"):
         from core.metrics import get_metrics_summary
         summary = get_metrics_summary()
         st.json(summary)
     
-    if st.button("🗑️ Clear Cache"):
+    if st.button("Clear Cache"):
         from core.cache import clear_cache
         clear_cache()
         st.success("Cache cleared!")
@@ -54,8 +57,9 @@ with st.sidebar:
 
 # ---------------- LOAD BENCHMARK TEST CASES ----------------
 test_cases = []
-if os.path.exists("data/test_cases.json"):
-    with open("data/test_cases.json", "r") as f:
+data_path = os.path.join(SCRIPT_DIR, "data", "test_cases.json")
+if os.path.exists(data_path):
+    with open(data_path, "r") as f:
         test_cases = json.load(f)
 
 selected_case = None
@@ -147,7 +151,8 @@ if st.button("Generate Threat Model"):
 
         # Step 2: Context validation & warnings
         if enable_context_warnings:
-            with open("prompts/stride.txt", "r") as f:
+            prompt_path = os.path.join(SCRIPT_DIR, "prompts", "stride.txt")
+            with open(prompt_path, "r") as f:
                 prompt_template = f.read()
             
             image_context = ""

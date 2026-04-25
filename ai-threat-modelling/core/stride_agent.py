@@ -1,6 +1,7 @@
 import json
 import re
 import logging
+import os
 from llm.llm_client import query_llm
 
 logger = logging.getLogger(__name__)
@@ -111,7 +112,9 @@ def generate_stride_threats(system_description: str) -> dict:
         ValueError: If LLM output cannot be parsed or validated
     """
 
-    with open("prompts/stride.txt", "r") as f:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    prompt_path = os.path.join(script_dir, "..", "prompts", "stride.txt")
+    with open(prompt_path, "r") as f:
         prompt_template = f.read()
 
     prompt = prompt_template.replace("{system}", system_description)

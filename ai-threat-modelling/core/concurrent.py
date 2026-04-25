@@ -36,7 +36,7 @@ def run_parallel_tasks(tasks: List[Tuple[Callable, tuple, str]]) -> Dict[str, An
     with ThreadPoolExecutor(max_workers=min(len(tasks), 4)) as executor:
         # Submit all tasks
         future_to_task = {
-            executor.submit(*task[:2]): task[2]
+            executor.submit(task[0], *task[1]): task[2]
             for task in tasks
         }
         
